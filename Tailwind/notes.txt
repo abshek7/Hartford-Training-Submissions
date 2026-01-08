@@ -1,0 +1,47 @@
+Fully responsive ecommerce product page using tailwindcss
+
+
+https://www.creative-tim.com/twcomponents/cheatsheet
+
+
+
+text-[]
+for custom color formats
+ensure correct spacing
+
+
+how to apply margins and padding
+
+<div class="bg-amber-200 m-12">
+  <h1 class="p-5">hello world</h1>
+</div>
+
+<div class="bg-amber-200 m-1.5">
+  <h1 class="px-4 py-4">hello world</h1>
+</div>
+
+
+
+p-6 all directions
+px-5 py-5 in x and y direction
+pl,pr,pt,pb
+
+margins
+m,mx,my,ml,mr,mb,mt
+
+utilizing layouts
+
+
+h-height of class
+w-width
+
+
+text sizes
+s
+base
+lg
+xs
+nxl
+
+
+Grid layout:

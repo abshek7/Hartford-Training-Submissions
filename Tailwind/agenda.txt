@@ -1,0 +1,8 @@
+1. Tailwind setup --> 
+    a. Using CDN
+    b. Via npm
+2. Change background, padding & margins using Tailwind
+3. Create responsive nav bar and image gallery
+4. Replicate e-commerce product page with Tailwind: Frontend Mentor E-commerce
+Submit Following
+1. Fully responsive Tailwind-based e-commerce product page 
