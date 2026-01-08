@@ -1,0 +1,30 @@
+A CSS rule is made up of two main parts: a selector and a declaration block.
+
+selector {
+    /* declarations*/
+  property: value;
+}
+
+inline vs block
+
+Inline Elements 	                            
+
+Inline elements occupy only sufficient width required.	
+Inline elements don't start in a new line.	
+Inline elements allow other inline elements to sit behind.	
+Inline elements don't have top and bottom margin 	 
+
+Block elements 
+
+Block Elements occupy the full width irrespective of their sufficiency.
+Block elements always start in a line.
+Block elements doesn't allow other elements to sit behind
+Block elements have top and bottom margin
+
+
+CSS units
+https://www.w3schools.com/cssref/css_units.php
+There are two types of length units: absolute and relative.
+
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/

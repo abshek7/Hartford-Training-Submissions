@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+.title {
+  text-align: center;
+  margin: 20px;
+}
+
+/* FLEX CONTAINER */
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* FLEX ITEMS */
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  flex: 1 1 100%;   /* Mobile */
+  max-width: 100%;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+
+/* 📱 TABLET – 2 COLUMNS */
+@media (min-width: 600px) {
+  .card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+/* 💻 DESKTOP – 3 COLUMNS */
+@media (min-width: 900px) {
+  .card {
+    flex: 1 1 30%;
+    max-width: 30%;
+  }
+}
