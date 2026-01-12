@@ -1,0 +1,16 @@
+Day 11 - Week 2 Day 5 - January 12th 2025
+1. Working with DOMs, Selecting elements, changing content, attributes, styles 
+2. Traversing DOM 
+3. Event Handling in Java Script
+4. Forms Validations
+5. Event bubbling, capturing, stopPropagation method 
+Submit Following
+1. Assignments on JS
+2. Fully functional Tic-Tac-Toe game with responsive layout and JS interactivity 
+
+
+:nth-child(n)	Selects the nth child.	document.querySelector('ul > li:nth-child(2)'); (selects the 2nd list item)
+:nth-child(odd)	Selects odd-numbered children.	document.querySelectorAll('tr:nth-child(odd)'); (selects all odd table rows)
+:nth-child(even)	Selects even-numbered children.	document.querySelectorAll('tr:nth-child(even)'); (selects all even table rows)
+:nth-child(An+B)	Selects elements based on a formula (e.g., 2n for even, 2n+1 for odd).	document.querySelectorAll('li:nth-child(3n)'); (selects the 3rd, 6th, 9th, etc. items)
+:nth-child(-n+B)	Selects the first B elements (e.g., -n+3 for the first 3).	document.querySelectorAll('p:nth-child(-n+3)'); (selects first, second, and third paragraphs)
