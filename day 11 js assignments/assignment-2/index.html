@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Event Flow</title>
+</head>
+
+<body>
+
+    <div class="claim-row">
+        <button class="approve-btn">Approve</button>
+    </div>
+
+    <script>
+        const row = document.querySelector(".claim-row");
+        const btn = document.querySelector(".approve-btn");
+
+        // Capturing phase
+        row.addEventListener("click", () => {
+            console.log("Row clicked (capturing)");
+        }, true);
+
+        btn.addEventListener("click", () => {
+            console.log("Button clicked (capturing)");
+        }, true);
+
+        // Bubbling phase
+        row.addEventListener("click", () => {
+            console.log("Row clicked (bubbling)");
+        });
+
+        btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            console.log("Button clicked (bubbling stopped)");
+        });
+    </script>
+
+</body>
+
+</html>

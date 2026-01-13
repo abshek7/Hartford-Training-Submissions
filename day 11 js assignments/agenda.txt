@@ -14,3 +14,7 @@ Submit Following
 :nth-child(even)	Selects even-numbered children.	document.querySelectorAll('tr:nth-child(even)'); (selects all even table rows)
 :nth-child(An+B)	Selects elements based on a formula (e.g., 2n for even, 2n+1 for odd).	document.querySelectorAll('li:nth-child(3n)'); (selects the 3rd, 6th, 9th, etc. items)
 :nth-child(-n+B)	Selects the first B elements (e.g., -n+3 for the first 3).	document.querySelectorAll('p:nth-child(-n+3)'); (selects first, second, and third paragraphs)
+
+
+
+https://www.notion.so/Lecture-15-Event-Listener-and-Handler-28e3a78e0e2280b6a720c5387d057dae
