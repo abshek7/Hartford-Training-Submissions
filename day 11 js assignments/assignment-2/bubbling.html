@@ -1,0 +1,62 @@
+<html>
+<head>
+    <style>
+        *{
+            margin: 25px;
+            box-sizing: border-box;
+        }
+        .grandparent{
+            height: 350px;
+            width: 350px;
+            border: 2px solid red;
+        }
+        .parent{
+            height: 250px;
+            width: 250px;
+            border: 2px solid blue;
+        }
+        .child{
+            height: 150px;
+            width: 150px;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div class="grandparent" id="one">
+        Grandparent
+        <div class="parent" id="two">
+            Parent
+            <div class="child" id="three">
+                Child
+            </div>
+        </div>
+    </div>
+    <script>
+        let grandparent=document.getElementById('one')
+        let parent=document.getElementById('two')
+        let child=document.getElementById('three')
+        grandparent.addEventListener('click',function(e){
+          
+            console.log("Grandparent Clicked")
+            console.log(e.target.id);
+console.log(e.currentTarget.id);
+
+        })
+        parent.addEventListener('click',function(e){
+
+            console.log("Parent Clicked")
+            console.log(e.target.id);
+console.log(e.currentTarget.id);
+
+        })
+        child.addEventListener('click',function(e){
+       
+            console.log("Child Clicked")
+            console.log(e.target.id);
+console.log(e.currentTarget.id);
+
+        })
+    </script>
+</body>
+</html>
