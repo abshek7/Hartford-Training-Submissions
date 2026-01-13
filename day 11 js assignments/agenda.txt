@@ -18,3 +18,6 @@ Submit Following
 
 
 https://www.notion.so/Lecture-15-Event-Listener-and-Handler-28e3a78e0e2280b6a720c5387d057dae
+
+map,filter and reduce
+https://www.freecodecamp.org/news/javascript-map-reduce-and-filter-explained-with-examples/
