@@ -1,0 +1,224 @@
+1.Loose comparison operator used instead we need to use strict comparison (===) to avoid type coercion
+
+<form id="userForm">
+ <input type="text" id="username">
+ <button onclick="validate()">Submit</button>
+</form>
+<script>
+
+function validate() {
+ let name = document.getElementById("username").value;
+ if (name === "") {
+ alert("Name required");
+ }
+}
+</script>
+
+
+2.There is a missing colon in CSS declaration add colon after property name to make it working
+
+<p class="msg">Hello User</p>
+<style>
+.msg {
+ color:blue;
+ font-size: 20px;
+}
+</style>
+
+
+3.wrong method name it should be getElementById
+
+<button id="btn">Click Me</button>
+<script>
+Debugging ExerciseThis section belongs to HTML, CSS and JavaScript section
+ Page 2 / 5
+document.getElementById("btn").onclick = function () {
+ alert("Clicked");
+};
+</script>
+
+
+4.
+
+age value 18 not handled in code include equality condition
+
+
+let age = 16;
+if (age > =18) {
+ console.log("Eligible");
+} else if (age < 18) {
+ console.log("Not Eligible");
+} 
+
+
+5. value property is not used
+
+
+<input type="text" id="email">
+<button onclick="check()">Check</button>
+<script>
+function check() {
+ let email = document.getElementById("email").value;
+ if (email === "") {
+ alert("Email required");
+ }
+}
+</script>
+
+
+6. units are needed to be used in css ,we have absolute and relative units like px,rem,em,%
+we need to px for width property
+
+.card {
+ width: 300px;
+ padding: 20px;
+ } 
+
+
+
+ 7. trailing space in confirmPwd so it doesnt value match with original
+ for such we functions for ltrim rtrim 
+ trim()
+
+
+ let pwd = "admin123";
+let confirmPwd = "admin123";
+if (pwd == confirmPwd) {
+ console.log("Match");
+} else {console.log("Mismatch");
+ } 
+
+
+
+8.visibility: hidden hides element but keeps layout space to avoid use display: none
+alert {
+ visibility: hidden;
+ display:none;
+ } 
+
+
+9.Missing closing quote in 2nd log statement
+
+console.log("Start");
+alert("Hello")
+console.log("End");
+
+10. here terms are used but no reference declarated earlier
+so use 
+let terms = document.getElementById("terms");
+
+
+
+<input type="checkbox" id="terms">
+<button onclick="submitForm()">Submit</button>
+<script>
+function submitForm() {
+ if (terms.checked == false) {
+ alert("Accept terms");
+ }
+}
+</script>
+
+11.
+
+Assignment instead of comparison
+
+<input type="text" id="mobile" />
+<button onclick="validate()">Submit</button>
+<script>
+ function validate() {
+ let mobile = document.getElementById("mobile").value;
+ if ((mobile.length === 10)) {
+ alert("Valid");
+ } else {
+ alert("Invalid");
+ }
+ }
+ </script>
+
+
+ 12.
+ value property is not used
+ 
+ <input type="text" id="policyName">
+<button onclick="validateName()">Submit</button>
+<script>
+function validateName() {
+ let name = document.getElementById("policyName").value;
+ if (name == "") {
+ alert("Policy holder name required");
+ }
+}
+</script>
+
+
+13.Assignment instead of comparison
+
+
+
+<select id="plan">
+ <option>Select Plan</option>
+ <option>Health</option>
+ <option>Life</option>
+</select>
+<button onclick="checkPlan()">Apply</button>
+ <script>
+ function checkPlan() {
+ let plan = document.getElementById("plan").value;
+ if ((plan === "Select Plan")) {
+ alert("Please choose a plan");
+ }
+ }
+ </script>
+
+
+
+ 14.
+variable name is incorrect it is policyNumber
+
+
+ let policyNumber = 123456;
+document.getElementById("policy").innerHTML =policyNumber;
+
+
+
+15. do not use negation operator nan checks for invalid number only
+
+
+let claimAmount = "abc";
+if (isNaN(claimAmount)) {
+alert("Valid claim");
+}
+eles{
+ alert("Invalid claim");}
+
+
+ 16.
+ case insensitivity while comparison
+
+ let policyType = "Health";
+if (policyType == "health") {
+console.log("Health Policy");
+}
+
+
+
+17.
+should use <li> tag
+
+
+let policies = ["Life", "Health", "Vehicle"];
+policies.forEach(function (policy) {
+ document.getElementById("list").innerHTML += `<li>${policy}</li>`;
+});
+
+
+18.
+use ! for invalid log statement
+
+let premium = "5000";
+if (!isNaN(premium)) {
+console.log("Invalid premium");
+} else {
+ console.log("Valid premium");
+}
