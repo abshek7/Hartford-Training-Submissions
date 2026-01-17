@@ -1,0 +1,202 @@
+https://www.typescripttutorial.net/typescript-tutorial
+
+https://www.typescriptlang.org/docs/
+
+
+https://www.geeksforgeeks.org/typescript/data-types-in-typescript/
+
+type annotation
+let variableName: type;
+let variableName: type = value;
+const constantName: type = value;
+
+Language	Code	Inferred type
+JavaScript	let x;	undefined (value)
+TypeScript	let x;	any
+TypeScript (with value)	let x = 10;	number
+
+
+
+
+
+
+
+
+STRICT NULL CHECKS IN TYPESCRIPT
+
+What is strictNullChecks?
+
+strictNullChecks is a TypeScript compiler option that controls how null and undefined are handled.
+
+When enabled, null and undefined are treated as separate types and are NOT allowed unless explicitly stated.
+
+tsconfig.json example:
+
+{
+"compilerOptions": {
+"strictNullChecks": true
+}
+}
+
+Behavior when strictNullChecks is OFF (unsafe)
+
+Code:
+
+let name: string;
+
+name = "Rahul";
+name = null;
+name = undefined;
+
+This is allowed when strictNullChecks is disabled.
+
+Problem:
+
+name.toUpperCase();
+
+This will crash at runtime if name is null or undefined, but TypeScript does not warn you.
+
+Behavior when strictNullChecks is ON (recommended)
+
+Code:
+
+let name: string;
+
+name = "Rahul";
+name = null; // Error
+name = undefined; // Error
+
+TypeScript now prevents unsafe assignments.
+
+Allowing null or undefined explicitly
+
+You must use union types.
+
+Examples:
+
+let name: string | null;
+let age: number | undefined;
+let email: string | null | undefined;
+
+Now this is allowed:
+
+name = null;
+
+Real-world function example
+
+Without strictNullChecks:
+
+function greet(name: string) {
+console.log(name.toUpperCase());
+}
+
+Calling:
+
+greet(null);
+
+This compiles but crashes at runtime.
+
+With strictNullChecks:
+
+function greet(name: string | null) {
+if (name === null) {
+console.log("Hello, guest");
+return;
+}
+
+console.log(name.toUpperCase());
+}
+
+TypeScript forces you to handle the null case.
+
+Optional parameters and undefined
+
+Code:
+
+function log(message?: string) {
+}
+
+The type of message is:
+
+string | undefined
+
+Equivalent to:
+
+function log(message: string | undefined) {}
+
+Non-null assertion operator (!)
+
+Code:
+
+let input = document.getElementById("username")!;
+
+Meaning:
+“I am sure this value is not null or undefined.”
+
+Warning:
+If you are wrong, the app will crash at runtime.
+
+Variables without assignment
+
+Code:
+
+let x: number;
+console.log(x);
+
+With strictNullChecks enabled, this produces an error because x is used before assignment.
+
+Why strictNullChecks is important
+
+Without it:
+
+TypeScript behaves closer to JavaScript
+
+Null-related runtime crashes are common
+
+With it:
+
+Safer code
+
+Better type checking
+
+Fewer production bugs
+
+Summary
+
+When strictNullChecks is OFF:
+
+null and undefined can be assigned to any type
+
+Unsafe and error-prone
+
+When strictNullChecks is ON:
+
+null and undefined must be explicitly handled
+
+Strongly recommended for all projects
+
+
+
+Types of Enums in TypeScript
+TypeScript provides two main types of enums: Numeric ,String enums, Heterogeneous Enums(mix of both)
+
+
+Union Type
+A union type in TypeScript allows a variable to have one of several types. It is represented using the | operator.
+Example: type Animal = "Dog" | "Cat" | "Bird";
+In this example, a variable of type Animal can have the value "Dog", "Cat", or "Bird".Intersection Type
+
+
+Intersection Type
+An intersection type combines multiple types into a single type, representing the combination of all types.
+It is represented using the & operator.
+
+If two types in an intersection have methods with the same name but different signatures, TypeScript throws an error due to the conflict.
+
+//TYPES ALIAS
+
+Interfaces allow multiple declarations to be merged, whereas type aliases are fixed and cannot be extended in the same way.
+
+Unlike interfaces, type aliases cannot be extended using extends. Instead, intersections (&) can be used for type composition.
+
+
