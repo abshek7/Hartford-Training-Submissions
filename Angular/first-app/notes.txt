@@ -1,0 +1,41 @@
+Minimal applications can be created
+routing can be kept false
+
+workspaces can be created
+
+ng serve --port num
+for running on other ports
+
+
+Components are the foundational building blocks for any Angular application. Each component has three parts:
+
+TypeScript class
+HTML template
+CSS styles
+
+Creating component:by default we have app component
+
+before angular 19 ,we where having a standalone parameter in ts file 
+from 19 ,all components are by default standalone
+
+@component decorator :It tells angular about extra information about the class
+// selector is unique for every component,we use this as tag to render
+// imports:modules needed
+// styleUrl:CSS file
+// templateUrl:a template is the HTML view of a component.
+Displays data from the component
+Responds to user actions (clicks, input, etc.)
+Uses Angular-specific syntax to make the UI dynamic
+Component = logic (TypeScript)
+Template = view (HTML)
+
+
+app comp is parent component
+How do we render component:By using its selector
+if we have to use one component into another component,first we need to import it
+if we want to use admin component in app component ,we have to import it into app component-this is done using class name
+
+How to create single file component: component has atleast 3 files .css,.ts,.html
+can be written into 1 file
+instead of templateUrl we need to use template property ,
+we can write html their inside ts file
