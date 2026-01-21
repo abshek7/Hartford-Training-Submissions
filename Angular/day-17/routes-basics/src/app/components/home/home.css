@@ -1,0 +1,35 @@
+.page-title {
+  @apply text-4xl font-bold text-gray-800 mb-6;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-8;
+}
+
+.feature-card {
+  @apply border border-gray-200 rounded p-4 transition;
+}
+
+.feature-card:hover {
+  @apply shadow-lg;
+}
+
+.btn {
+  @apply px-4 py-2 rounded font-semibold transition;
+}
+
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-600;
+}
+
+.btn-green {
+  @apply bg-green-500 text-white;
+}
+
+.btn-green:hover {
+  @apply bg-green-600;
+}

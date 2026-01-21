@@ -1,0 +1,43 @@
+<div class="max-w-4xl mx-auto">
+  <button
+    class="back-btn"
+    (click)="goBack()">
+    ← Back to Products
+  </button>
+
+  @if (product) {
+    <div class="product-detail-card">
+      <div class="detail-container"> 
+
+        <div class="detail-content">
+          <h1 class="detail-title">{{ product.name }}</h1>
+          <p class="detail-price">{{ product.price }}</p>
+          <p class="detail-description">{{ product.description }}</p>
+
+          <div class="route-info-box">
+            <h3 class="font-semibold mb-2">Route Information:</h3>
+
+            <p class="route-param">
+              Product ID from URL:
+              <span class="param-value">{{ productId }}</span>
+            </p>
+
+            <p class="route-param">
+              Current Route:
+              <span class="param-value">/products/{{ productId }}</span>
+            </p>
+          </div>
+
+          <div class="action-buttons">
+            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-buy">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="error-box">
+      <p class="text-xl text-red-600">Product not found!</p>
+    </div>
+  }
+</div>

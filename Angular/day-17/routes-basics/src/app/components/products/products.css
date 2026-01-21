@@ -1,0 +1,39 @@
+.page-title {
+  @apply text-4xl font-bold text-gray-800 mb-6;
+}
+
+.products-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+}
+
+.product-card {
+  @apply bg-white rounded-lg shadow-md p-6 cursor-pointer transition;
+}
+
+.product-card:hover {
+  @apply shadow-xl;
+}
+
+.product-icon {
+  @apply text-4xl mb-4;
+}
+
+.product-name {
+  @apply text-xl font-semibold mb-2;
+}
+
+.product-description {
+  @apply text-gray-600 mb-4;
+}
+
+.product-price {
+  @apply text-2xl font-bold text-blue-600;
+}
+
+.product-btn {
+  @apply mt-4 w-full bg-blue-500 text-white py-2 rounded transition;
+}
+
+.product-btn:hover {
+  @apply bg-blue-600;
+}

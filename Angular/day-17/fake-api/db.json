@@ -1,0 +1,84 @@
+{
+  "cricketers": [
+    {
+      "id": 1,
+      "name": "Sachin Tendulkar",
+      "country": "India",
+      "role": "Batsman",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm off break"
+    },
+    {
+      "id": 2,
+      "name": "Virat Kohli",
+      "country": "India",
+      "role": "Batsman",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm medium"
+    },
+    {
+      "id": 3,
+      "name": "MS Dhoni",
+      "country": "India",
+      "role": "Wicket-keeper Batsman",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "None"
+    },
+    {
+      "id": 4,
+      "name": "Ricky Ponting",
+      "country": "Australia",
+      "role": "Batsman",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm medium"
+    },
+    {
+      "id": 5,
+      "name": "Brian Lara",
+      "country": "West Indies",
+      "role": "Batsman",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": "Right-arm leg break"
+    },
+    {
+      "id": 6,
+      "name": "Jacques Kallis",
+      "country": "South Africa",
+      "role": "All-rounder",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm fast-medium"
+    },
+    {
+      "id": 7,
+      "name": "AB de Villiers",
+      "country": "South Africa",
+      "role": "Batsman",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm medium"
+    },
+    {
+      "id": 8,
+      "name": "Kumar Sangakkara",
+      "country": "Sri Lanka",
+      "role": "Wicket-keeper Batsman",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": "Right-arm off break"
+    },
+    {
+      "id": 9,
+      "name": "Wasim Akram",
+      "country": "Pakistan",
+      "role": "Bowler",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": "Left-arm fast"
+    },
+    {
+      "id": 10,
+      "name": "James Anderson",
+      "country": "England",
+      "role": "Bowler",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": "Right-arm fast-medium"
+    }
+  ]
+}

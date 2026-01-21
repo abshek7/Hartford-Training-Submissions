@@ -1,200 +1,189 @@
 const API_URL = "https://jsonplaceholder.typicode.com/users";
-      const tableBody = document.getElementById("accountsTableBody");
-      const loader = document.getElementById("loader");
-      const searchInput = document.getElementById("searchInput");
-      const branchFilter = document.getElementById("branchFilter");
-      const totalBalanceEl = document.getElementById("totalBalance");
 
-      let accounts = [];
+const tableBody = document.getElementById("accountsTableBody");
+const loader = document.getElementById("loader");
+const searchInput = document.getElementById("searchInput");
+const branchFilter = document.getElementById("branchFilter");
+const totalBalanceEl = document.getElementById("totalBalance");
 
-       
-      const randomBalance = () =>
-        Math.floor(Math.random() * (50000 - 10000 + 1)) + 10000;
+let accounts = [];
 
-      const saveData = () =>
-        localStorage.setItem("accounts", JSON.stringify(accounts));
+const randomBalance = () =>
+  Math.floor(Math.random() * (50000 - 10000 + 1)) + 10000;
 
-      const loadData = () => JSON.parse(localStorage.getItem("accounts"));
+const saveData = () =>
+  localStorage.setItem("accounts", JSON.stringify(accounts));
 
-      /* ------------------ Fetch Accounts ------------------ */
-      async function fetchAccounts() {
-        loader.classList.remove("hidden");
-        try {
-          const res = await fetch(API_URL);
-          const data = await res.json();
+const loadData = () => JSON.parse(localStorage.getItem("accounts"));
 
-          accounts = data.map((u) => ({
-            accountNumber: u.id,
-            name: u.name,
-            email: u.email,
-            branch: u.address.city,
-            balance: randomBalance(),
-            transactions: [],
-          }));
+async function fetchAccounts() {
+  loader.classList.remove("hidden");
+  try {
+    const res = await fetch(API_URL);
+    const data = await res.json();
 
-          saveData();
-          populateBranches();
-          displayAccounts(accounts);
-        } catch {
-          alert("Failed to fetch data");
-        } finally {
-          loader.classList.add("hidden");
-        }
-      }
+    accounts = data.map((u) => ({
+      accountNumber: u.id,
+      name: u.name,
+      email: u.email,
+      branch: u.address.city,
+      balance: randomBalance(),
+      transactions: [],
+    }));
 
-      /* ------------------ Display ------------------ */
-      function displayAccounts(list) {
-        tableBody.innerHTML = "";
+    saveData();
+    populateBranches();
+    displayAccounts(accounts);
+  } catch {
+    alert("Failed to fetch data");
+  } finally {
+    loader.classList.add("hidden");
+  }
+}
 
-        list.forEach((acc) => {
-          const row = document.createElement("tr");
-          row.className = "border-b";
+function displayAccounts(list) {
+  tableBody.innerHTML = "";
 
-          row.innerHTML = `
+  list.forEach((acc) => {
+    const row = document.createElement("tr");
+    row.className = "border-b";
+
+    row.innerHTML = `
       <td class="p-2">${acc.accountNumber}</td>
       <td class="p-2">${acc.name}</td>
       <td class="p-2">${acc.email}</td>
       <td class="p-2">${acc.branch}</td>
       <td class="p-2">₹${acc.balance}</td>
       <td class="p-2 flex gap-2 flex-wrap">
-        <button class="bg-black text-white px-2 rounded"
-          onclick="transaction(${acc.accountNumber}, 'Deposit')">Deposit</button>
-
-        <button class="bg-black text-white px-2 rounded"
-          onclick="transaction(${acc.accountNumber}, 'Withdraw')">Withdraw</button>
-
-        <button class="bg-black text-white px-2 rounded"
-          onclick="viewHistory(${acc.accountNumber})">History</button>
-
-        <button class="bg-black text-white px-2 rounded"
-          onclick="deleteAccount(${acc.accountNumber})">Delete</button>
+        <button class="bg-black text-white px-2 rounded" onclick="transaction(${acc.accountNumber}, 'Deposit')">Deposit</button>
+        <button class="bg-black text-white px-2 rounded" onclick="transaction(${acc.accountNumber}, 'Withdraw')">Withdraw</button>
+        <button class="bg-black text-white px-2 rounded" onclick="viewHistory(${acc.accountNumber})">History</button>
+        <button class="bg-black text-white px-2 rounded" onclick="deleteAccount(${acc.accountNumber})">Delete</button>
       </td>
     `;
-          tableBody.appendChild(row);
-        });
+    tableBody.appendChild(row);
+  });
 
-        updateTotalBalance();
-      }
+  updateTotalBalance();
+}
 
-      /* ------------------ Search & Filter ------------------ */
-      function populateBranches() {
-        branchFilter.innerHTML = '<option value="">All Branches</option>';
-        [...new Set(accounts.map((a) => a.branch))].forEach((b) => {
-          branchFilter.innerHTML += `<option>${b}</option>`;
-        });
-      }
+function populateBranches() {
+  branchFilter.innerHTML = '<option value="">All Branches</option>';
+  [...new Set(accounts.map((a) => a.branch))].forEach((b) => {
+    branchFilter.innerHTML += `<option>${b}</option>`;
+  });
+}
 
-      function applyFilters() {
-        const text = searchInput.value.toLowerCase();
-        const branch = branchFilter.value;
+function applyFilters() {
+  const text = searchInput.value.toLowerCase();
+  const branch = branchFilter.value;
 
-        const filtered = accounts.filter(
-          (a) =>
-            a.name.toLowerCase().includes(text) &&
-            (branch === "" || a.branch === branch)
-        );
+  const filtered = accounts.filter(
+    (a) =>
+      a.name.toLowerCase().includes(text) &&
+      (branch === "" || a.branch === branch)
+  );
 
-        displayAccounts(filtered);
-      }
+  displayAccounts(filtered);
+}
 
-      searchInput.addEventListener("input", applyFilters);
-      branchFilter.addEventListener("change", applyFilters);
+searchInput.addEventListener("input", applyFilters);
+branchFilter.addEventListener("change", applyFilters);
 
-      /* ------------------ Transactions ------------------ */
-      function transaction(id, type) {
-        const acc = accounts.find((a) => a.accountNumber === id);
-        const amt = Number(prompt(`Enter ${type} amount:`));
-        if (!amt || amt <= 0) return;
+function transaction(id, type) {
+  const acc = accounts.find((a) => a.accountNumber === id);
+  const amt = Number(prompt(`Enter ${type} amount:`));
+  if (!amt || amt <= 0) return;
 
-        if (type === "Withdraw" && acc.balance < amt) {
-          alert("Insufficient Balance");
-          return;
-        }
+  if (type === "Withdraw" && acc.balance < amt) {
+    alert("Insufficient Balance");
+    return;
+  }
 
-        acc.balance += type === "Deposit" ? amt : -amt;
+  acc.balance += type === "Deposit" ? amt : -amt;
 
-        if (acc.balance < 5000) {
-          acc.balance -= 200;
-          alert("Minimum balance breached. ₹200 penalty applied.");
-        }
+  if (acc.balance < 5000) {
+    acc.balance -= 200;
+    alert("Minimum balance breached. ₹200 penalty applied.");
+  }
 
-        acc.transactions.push({
-          type,
-          amount: amt,
-          date: new Date().toLocaleString(),
-        });
+  acc.transactions.push({
+    type,
+    amount: amt,
+    date: new Date().toLocaleString(),
+  });
 
-        saveData();
-        applyFilters();
-      }
+  saveData();
+  applyFilters();
+}
 
-      /* ------------------ History ------------------ */
-      function viewHistory(id) {
-        const acc = accounts.find((a) => a.accountNumber === id);
-        if (acc.transactions.length === 0) {
-          alert("No transactions");
-          return;
-        }
-        alert(
-          acc.transactions
-            .map((t) => `${t.date} | ${t.type} ₹${t.amount}`)
-            .join("\n")
-        );
-      }
+function viewHistory(id) {
+  const acc = accounts.find((a) => a.accountNumber === id);
+  if (acc.transactions.length === 0) {
+    alert("No transactions");
+    return;
+  }
 
-      /* ------------------ Create Account ------------------ */
-      document.getElementById("accountForm").addEventListener("submit", (e) => {
-        e.preventDefault();
+  alert(
+    acc.transactions
+      .map((t) => `${t.date} | ${t.type} ₹${t.amount}`)
+      .join("\n")
+  );
+}
 
-        const acc = {
-          accountNumber: Date.now(),
-          name: name.value,
-          email: email.value,
-          branch: branch.value,
-          balance: 10000,
-          transactions: [],
-        };
+document.getElementById("accountForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-        fetch(API_URL, {
-          method: "POST",
-          body: JSON.stringify(acc),
-          headers: { "Content-Type": "application/json" },
-        });
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const branch = document.getElementById("branch").value.trim();
 
-        accounts.push(acc);
-        saveData();
-        populateBranches();
-        applyFilters();
-        e.target.reset();
-      });
+  const acc = {
+    accountNumber: Date.now(),
+    name,
+    email,
+    branch,
+    balance: 10000,
+    transactions: [],
+  };
 
-      /* ------------------ Delete ------------------ */
-      function deleteAccount(id) {
-        if (!confirm("Delete account?")) return;
+  await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(acc),
+  });
 
-        fetch(`${API_URL}/${id}`, { method: "DELETE" });
-        accounts = accounts.filter((a) => a.accountNumber !== id);
-        saveData();
-        applyFilters();
-      }
+  accounts.push(acc);
+  saveData();
+  populateBranches();
+  applyFilters();
+  e.target.reset();
+});
 
-      /* ------------------ Sort & Total ------------------ */
-      function sortByBalance() {
-        accounts.sort((a, b) => b.balance - a.balance);
-        applyFilters();
-      }
+function deleteAccount(id) {
+  if (!confirm("Delete account?")) return;
 
-      function updateTotalBalance() {
-        const total = accounts.reduce((sum, a) => sum + a.balance, 0);
-        totalBalanceEl.textContent = total;
-      }
+  fetch(`${API_URL}/${id}`, { method: "DELETE" });
+  accounts = accounts.filter((a) => a.accountNumber !== id);
+  saveData();
+  applyFilters();
+}
 
-      /* ------------------ Init ------------------ */
-      const stored = loadData();
-      if (stored) {
-        accounts = stored;
-        populateBranches();
-        displayAccounts(accounts);
-      } else {
-        fetchAccounts();
-      }
+function sortByBalance() {
+  accounts.sort((a, b) => b.balance - a.balance);
+  applyFilters();
+}
+
+function updateTotalBalance() {
+  const total = accounts.reduce((sum, a) => sum + a.balance, 0);
+  totalBalanceEl.textContent = total;
+}
+
+const stored = loadData();
+if (stored) {
+  accounts = stored;
+  populateBranches();
+  displayAccounts(accounts);
+} else {
+  fetchAccounts();
+}

@@ -1,0 +1,26 @@
+<div class="max-w-4xl mx-auto">
+  <h1 class="page-title">Welcome to Home Page</h1>
+  <div class="card">
+    <p class="text-lg text-gray-600 mb-6">
+      This is a demonstration of Angular 21 routing with standalone components.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="feature-card">
+        <h3 class="text-xl font-semibold mb-2">Static Routes</h3>
+        <p class="text-gray-600 mb-4">Navigate between different pages</p>
+        <button (click)="navigateToAbout()" 
+                class="btn btn-blue">
+          Go to About
+        </button>
+      </div>
+      <div class="feature-card">
+        <h3 class="text-xl font-semibold mb-2">Dynamic Routes</h3>
+        <p class="text-gray-600 mb-4">Routes with parameters</p>
+        <button (click)="navigateToProduct()" 
+                class="btn btn-green">
+          View Product #101
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
