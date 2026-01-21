@@ -1,0 +1,8 @@
+why should we use ngonit,why we should constructor at some places
+
+when data flowing from parent to child component
+data will be not availble when constructor function is called because component related function is not done
+
+when angular component related work is done then it will work
+
+learning partner

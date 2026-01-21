@@ -1,0 +1,53 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+  @for (employee of employees; track $index) {
+    <div class="border rounded-md shadow-sm bg-white">
+
+      <!-- Image -->
+      <img
+        [src]="employee.photoPath"
+        alt="Employee photo"
+        class="w-full h-64 object-contain border-b"
+      />
+
+      <!-- Content -->
+      <div class="p-4 text-sm text-gray-800 space-y-1">
+        <h3 class="text-lg font-semibold mb-2">
+          {{ employee.name }}
+        </h3>
+
+        <p><span class="font-medium">Gender:</span> {{ employee.gender }}</p>
+
+        <p>
+          <span class="font-medium">Date of Birth:</span>
+          {{ employee.dateOfBirth | date }}
+        </p>
+
+        <p>
+          <span class="font-medium">Contact Preference:</span>
+          {{ employee.contactPreference }}
+        </p>
+
+        <p >
+          <span class="font-medium">Phone:</span>
+          {{ employee.phoneNumber }}
+        </p>
+
+        <p *ngIf="employee.email">
+          <span class="font-medium">Email:</span>
+          {{ employee.email }}
+        </p>
+
+        <p>
+          <span class="font-medium">Department:</span>
+          {{ employee.department }}
+        </p>
+
+        <p>
+          <span class="font-medium">Is Active:</span>
+          {{ employee.isActive }}
+        </p>
+      </div>
+
+    </div>
+  }
+</div>

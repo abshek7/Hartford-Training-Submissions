@@ -39,3 +39,13 @@ How to create single file component: component has atleast 3 files .css,.ts,.htm
 can be written into 1 file
 instead of templateUrl we need to use template property ,
 we can write html their inside ts file
+
+
+
+///templates
+In Angular, HTML templates are not independent.
+They work only within the scope of the component.
+
+So anything you want to use in the HTML (pipes, directives, components) must be made available to that component in TypeScript.
+
+The template can only use what the component explicitly provides.
