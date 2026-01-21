@@ -1,0 +1,49 @@
+<div
+  class="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded shadow"
+>
+  <div class="flex flex-col sm:flex-row gap-2 mb-4">
+    <input class="flex-1 border p-2 rounded" [(ngModel)]="newTitle" placeholder="Add a todo" />
+    <button class="bg-blue-500 text-white px-4 py-2 rounded w-full sm:w-auto" (click)="addTodo()">
+      Add
+    </button>
+  </div>
+
+  @if (todos().length === 0) {
+  <p class="text-gray-500 text-center">No todos yet </p>
+  }
+ 
+  <ul class="space-y-2">
+    @for (todo of todos(); track todo.id) {
+    <li
+      class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border p-3 rounded"
+    >
+      <div class="flex items-start gap-2 flex-1">
+        <input
+          type="checkbox"
+          [checked]="todo.completed"
+          (change)="toggleTodo(todo.id)"
+          class="mt-1"
+        />
+
+        @if (editingId === todo.id) {
+        <input class="border p-1 rounded w-full" [(ngModel)]="editingTitle" />
+        } @else {
+        <span class="break-words max-w-full sm:max-w-[400px]" [class.line-through]="todo.completed">
+          {{ todo.title }}
+        </span>
+        }
+      </div>
+
+      <div class="flex flex-wrap gap-2 justify-end">
+        @if (editingId === todo.id) {
+        <button class="text-green-600" (click)="saveEdit(todo.id)">Save</button>
+        } @else {
+        <button class="text-blue-600" (click)="startEdit(todo.id, todo.title)">Edit</button>
+        }
+
+        <button class="text-red-600" (click)="deleteTodo(todo.id)">Delete</button>
+      </div>
+    </li>
+    }
+  </ul>
+</div>
