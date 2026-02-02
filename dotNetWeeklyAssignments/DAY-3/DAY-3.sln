@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAY-3", "DAY-3.csproj", "{6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "check vs unchecked", "ConsoleApp1\check vs unchecked.csproj", "{C4A723D6-51C0-4489-A0F0-2DC751DFE32A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "typecast", "typecast\typecast.csproj", "{8A6D5242-5078-4883-BFDA-015507C63A7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strings", "Strings\Strings.csproj", "{E3213191-3644-4F79-84F4-849686B83703}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{C4A723D6-51C0-4489-A0F0-2DC751DFE32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4A723D6-51C0-4489-A0F0-2DC751DFE32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4A723D6-51C0-4489-A0F0-2DC751DFE32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A6D5242-5078-4883-BFDA-015507C63A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A6D5242-5078-4883-BFDA-015507C63A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A6D5242-5078-4883-BFDA-015507C63A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A6D5242-5078-4883-BFDA-015507C63A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3213191-3644-4F79-84F4-849686B83703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3213191-3644-4F79-84F4-849686B83703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3213191-3644-4F79-84F4-849686B83703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3213191-3644-4F79-84F4-849686B83703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

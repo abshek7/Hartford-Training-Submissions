@@ -3,7 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>DAY_3</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PublishAot>true</PublishAot>
@@ -11,9 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="overflow\**" />
-    <EmbeddedResource Remove="overflow\**" />
-    <None Remove="overflow\**" />
+    <Compile Include="C:\Users\abhis\Desktop\misc\HartFord\dotNetWeeklyAssignments\DAY-3\overflow\checked.cs" Link="checked.cs" />
   </ItemGroup>
 
 </Project>
