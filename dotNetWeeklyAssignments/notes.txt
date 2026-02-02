@@ -1,0 +1,170 @@
+running-exe:
+f5-start debugging
+ctrl+f5- start without debugging
+shift+f5- stop debugging
+
+tracing code:
+f9:
+f10: step over (func executed but skipped control going over their)
+f11: step into(goes into func and runs line by line)
+shift+f11: step out(takes back to func)
+
+
+
+Debugging is the process of finding, analyzing, and fixing errors (bugs) 
+in a program by running it step-by-step and observing its behavior.
+ 
+1. START DEBUGGING
+Key: F5
+
+Description:
+- Compiles and runs the program with the debugger attached.
+- Breakpoints become active.
+- Program execution pauses at breakpoints.
+- Allows step-by-step execution and variable inspection.
+
+Use Case:
+- When you want to analyze program flow
+- When fixing logical or runtime errors
+
+ 
+2. START WITHOUT DEBUGGING 
+Key: Ctrl + F5
+
+Description:
+- Runs the program normally without attaching the debugger.
+- Breakpoints are ignored.
+- Faster execution.
+
+Use Case:
+- When code is already tested
+- To see only the final output
+
+Important Note:
+- Breakpoints DO NOT work with Ctrl + F5. 
+
+3. STOP DEBUGGING 
+Key: Shift + F5
+
+Description:
+- Immediately stops the running program.
+- Ends the current debugging session.
+
+Use Case:
+- When debugging is no longer required
+- When program is stuck or running infinitely
+ 
+4. BREAKPOINT 
+Key: F9
+
+Description:
+- A breakpoint pauses program execution at a specific line.
+- Execution stops BEFORE that line runs.
+- Represented by a red dot in the margin.
+
+Use Case:
+- To inspect variable values
+- To understand program behavior
+- To locate logical errors
+ 
+5. STEP OVER 
+Key: F10
+
+Description:
+- Executes the current line.
+- If the line contains a function call, the function runs completely.
+- Control moves to the next line without entering the function.
+
+Use Case:
+- When the function is trusted
+- To move quickly through code
+ 
+6. STEP INTO 
+Key: F11
+
+Description:
+- Executes the current line.
+- If the line contains a function call, debugger enters the function.
+- Allows line-by-line execution inside the function.
+
+Use Case:
+- When debugging function logic
+- To inspect parameters and internal calculations
+ 
+7. STEP OUT 
+Key: Shift + F11
+
+Description:
+- Completes execution of the current function.
+- Returns control to the calling function.
+- Skips remaining lines in the current function.
+
+Use Case:
+- When you are done debugging inside a function
+ 
+8. CONTINUE EXECUTION 
+Key: F5 (while debugging)
+
+Description:
+- Resumes program execution from the current breakpoint.
+- Stops again if another breakpoint is encountered.
+
+Use Case:
+- To jump to the next breakpoint
+ 
+9. RESTART DEBUGGING 
+Key: Ctrl + Shift + F5
+
+Description:
+- Stops the current debugging session.
+- Restarts the program from the beginning with debugger attached.
+
+Use Case:
+- After code changes
+- To debug from the start again
+ 
+10. WATCH WINDOW 
+Key: Ctrl + Alt + W, then press 1
+
+Description:
+- Allows tracking specific variables or expressions.
+- Updates values as execution progresses.
+
+Use Case:
+- Monitoring important variables continuously
+ 
+11. CALL STACK 
+Key: Ctrl + Alt + C
+
+Description:
+- Shows the list of active function calls.
+- Displays the order in which functions were called.
+
+Use Case:
+- Understanding program flow
+- Debugging nested method calls
+ 
+12. CONDITIONAL BREAKPOINT 
+Key: No default key (Right-click breakpoint)
+
+Description:
+- Breakpoint that triggers only when a condition is true.
+- Example: i == 5 or sum > 100
+
+Use Case:
+- Debugging large loops
+- Avoid stopping on every iteration
+ 
+13. DEBUG MODE vs RELEASE MODE 
+Key:
+- Debug Mode: Default
+- Release Mode: Change from toolbar
+
+Description:
+- Debug Mode: Enables debugging, symbols, and breakpoints.
+- Release Mode: Optimized, faster, debugging disabled.
+
+Use Case:
+- Debug Mode for testing
+- Release Mode for final deployment
+

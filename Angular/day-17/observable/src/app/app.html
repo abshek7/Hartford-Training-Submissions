@@ -1,0 +1,19 @@
+ <!-- <h2>Manual Subscribe</h2>
+<p>Count: {{ manualCount }}</p>
+
+<hr>
+
+<h2>Async Pipe Subscribe</h2>
+<p>Count: {{ counterService.counter$ | async }}</p> -->
+
+ 
+   <h2>Parent Component</h2>
+
+    <!-- Parent → Child -->
+    <app-child
+      [childName]="parentName"
+      (messageFromChild)="receiveMessage($event)">
+    </app-child>
+
+    <!-- Child → Parent result -->
+    <p><strong>Message from Child:</strong> {{ childMessage }}</p>
