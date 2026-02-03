@@ -1,0 +1,156 @@
+FOR LOOP:
+
+A for loop is a count-controlled loop.
+You use it when you know in advance how many times the loop should run.
+In a for loop, all variables declared in the initialization section must be declared AND initialized there
+
+Syntax
+for (initialization; condition; increment/decrement)
+{
+    // code to execute
+}
+
+Execution Flow
+
+Initialization runs once
+
+Condition is checked
+
+Code executes if condition is true
+
+Increment/decrement happens
+
+Condition checked again
+
+What for Loop Gives Access To:
+Loop counter
+Index position
+Full control over increment/decrement
+
+
+
+int j;
+
+for (int i = 0, j = 5; i < j; i++)
+{
+ Console.WriteLine(i);
+   }
+
+not allowed :All variables in the initialization section must be declared there
+
+OR already exist before the loop
+
+
+
+WHILE LOOP:
+A while loop is a condition-controlled loop.
+It runs as long as a condition remains true.
+
+Syntax
+while (condition)
+{
+    // code
+}
+
+Important Point
+Condition is checked before executing the loop body.
+
+Best Use Cases
+
+When number of iterations is unknown
+
+User input validation
+
+Reading data until condition fails
+
+
+Fixed number of repetitions (use for)
+
+When you forget to update condition → infinite loop risk
+
+
+What while Loop Gives Access To
+Conditional repetition
+External control variable
+No automatic counter
+
+
+DO-WHILE LOOP:
+A do-while loop executes at least once, even if the condition is false.
+do
+{
+    // code
+}
+while (condition);
+
+usecase:
+Menus
+At least one execution required
+User confirmation loops
+
+
+FOR-EACH LOOP:
+foreach is used to iterate through collections (arrays, lists).
+
+Syntax:
+foreach (type variable in collection)
+{
+    // code
+}
+
+
+Best Use Cases:
+Reading collections
+No index needed
+
+What NOT to Use It For:
+Modifying collection size
+Needing index position
+Skipping elements by index
+
+What foreach Gives Access To:
+Element values
+No index
+No modification of structure
+
+
+Limitations of the foreach Loop
+1. Non-Index Access: Unlike the for loop, the foreach loop doesn't provide an index variable
+that you can use to reference the position of the current element in the collection.
+
+foreach (int num in numbers) 
+
+{ 
+ if (num == target) 
+ { return ???;   // do not know the index of num
+ }
+}
+
+
+2. Collection Modification: cannot remove or add elements to the collection while iterating with a foreach loop.
+
+foreach(int num in marks) 
+
+{   // cannot modify array or collections like list and set.
+
+    // only changes num not
+
+    // the element
+
+    num = num * 2; 
+
+}
+
+3. Foreach only iterates forward over the array in single steps
+
+// cannot be converted to a foreach loop
+
+for (int i = numbers.Length - 1; i > 0; i--) 
+
+{
+
+     Console.WriteLine(numbers[i]);
+
+}
+
+4. Performance Overhead: This may have performance drawbacks compared to traditional loops, especially with large datasets.

@@ -14,6 +14,9 @@ namespace OopsPrac
             get {return empId; }
             set {  empId = value; } 
         }
+         
+
+       
         public string EmpName { get; set; }
         public Emp()
         {
