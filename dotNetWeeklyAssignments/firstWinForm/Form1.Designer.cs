@@ -1,4 +1,5 @@
-﻿namespace firstWinForm
+﻿
+namespace exercise2
 {
     partial class Form1
     {
@@ -28,112 +29,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
             label1 = new Label();
-            label2 = new Label();
-            linkLabel1 = new LinkLabel();
-            label3 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            textBox1 = new TextBox();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.LavenderBlush;
-            button1.Location = new Point(354, 334);
-            button1.Name = "button1";
-            button1.Size = new Size(117, 51);
-            button1.TabIndex = 0;
-            button1.Text = "kottu bro";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(245, 88);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(336, 27);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(245, 196);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(334, 27);
-            textBox2.TabIndex = 2;
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(253, 64);
+            label1.Location = new Point(268, 138);
             label1.Name = "label1";
-            label1.Size = new Size(73, 20);
-            label1.TabIndex = 3;
-            label1.Text = "username";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Click += label1_Click;
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
             // 
-            // label2
+            // dateTimePicker1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(256, 172);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 20);
-            label2.TabIndex = 4;
-            label2.Text = "password";
-            label2.Click += label2_Click;
+            dateTimePicker1.Location = new Point(377, 138);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.TabIndex = 1;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
-            // linkLabel1
+            // textBox1
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(477, 300);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(46, 20);
-            linkLabel1.TabIndex = 5;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Login";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(293, 300);
-            label3.Name = "label3";
-            label3.Size = new Size(178, 20);
-            label3.TabIndex = 6;
-            label3.Text = "Already have an account?";
-            label3.TextAlign = ContentAlignment.TopCenter;
-            label3.Click += label3_Click;
+            textBox1.Location = new Point(377, 194);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(250, 27);
+            textBox1.TabIndex = 3;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label3);
-            Controls.Add(linkLabel1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox2);
             Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
+        //private void textBox1_TextChanged(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         #endregion
 
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
         private Label label1;
-        private Label label2;
-        private LinkLabel linkLabel1;
-        private Label label3;
+        private DateTimePicker dateTimePicker1;
+        private TextBox textBox1;
     }
 }

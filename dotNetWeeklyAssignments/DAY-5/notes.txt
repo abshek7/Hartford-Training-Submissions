@@ -1,0 +1,25 @@
+Collections in c#:Has containers
+Collection is a set of classes that include data structures that store number of objects and provide wide  
+
+System.Collections:Non generic--object based
+System.Collections.Generic: For type safety
+Template datatype declared at time of using 
+
+
+
+Most of the collection classes share common interfaces:
+Collection interfaces:ICollection,IList,IDictionary
+Interface iterators/enumerators:
+IEnumerator,IEnumerable
+IDictionaryEnumerator
+Collection supports foreach statement for iteration.They are generally used instead of the above two since they are very convinient
+
+
+
+collections to generics through templates
+
+Generics:They are way to create type safe classes
+
+
+non generic classes:
+ArrayList,Stack,Queue,Hashtable
