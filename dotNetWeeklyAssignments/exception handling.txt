@@ -1,0 +1,56 @@
+requirement-2 reg no check using regex
+
+indexer
+
+exception handling
+unit testing
+test cases
+code coverage
+
+Exception handling:
+
+System.Exception
+Try , Catch(handler),Throw(cond raise of error or generate throw),Finally (at last)
+
+try{
+}
+catch(Exception){
+ Console.WriteLine(e.Message);
+}
+finally{
+//statements
+}
+root base class  Exception  over that we have Object
+ISerializable
+
+
+try block must either have a catch or finally block or both
+
+Application exception-Derive your own exception classes from here
+
+catching non exception catch block
+
+
+main(){
+         try{  opened a file
+....error occurred
+...
+.....close file
+              }
+          catch (..){
+              here
+            }
+
+
+}
+
+inner exception
+assign -user defined exception learning
+
+
+Java                          C# 
+Controller                    Controller
+Service                       Service
+Repository                    DbContext / Repo
+Hibernate (ORM)               EF Core (ORM)
+Database                      Database
