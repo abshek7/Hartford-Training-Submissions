@@ -1,0 +1,115 @@
+access-modifier delegate return-type name(args)
+daily assignment-money and dollar -delegates
+
+
+
+
+
+why system
+system.linq;
+system.http
+etc namesapces attached by default
+
+
+
+
+how is db converted to orm in c#
+
+
+
+linq
+IQuerable interface
+
+
+JDBC in Java is basically the Java equivalent of ADO.NET in C#.
+
+
+
+https://studysection.com/blog/wp-content/uploads/2020/02/linq-overview.png
+
+
+https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/introduction-to-linq-queries
+
+
+Assembly in c# is similar to jar in java
+
+
+query is only mapped not executed in linq
+
+what type of data does query in linq return 
+
+
+Why var hides this (and confuses people)
+var query = ...
+Better mental rewrite:
+
+IQueryable<User> query = context.Users.Where(...);
+
+
+or:
+
+IEnumerable<int> query = numbers.Where(...);
+
+
+
+A LINQ query returns an IEnumerable<T> or IQueryable<T> representing a deferred query, not actual data, until it is enumerated or materialized.
+
+
+Deferred Query:
+
+what does deferred query mean:
+The query is defined now, but executed later — only when you actually need the results.
+
+Tiny example (shows the delay):
+var query = numbers.Where(n => n > 10);
+
+
+At this point:
+
+--- No looping
+--- No DB call
+--- No filtering
+
+Now:
+
+foreach (var n in query)
+{
+    Console.WriteLine(n);
+}
+
+
+----NOW it runs.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+
+        //BREAKPOINT #1
+        var query = numbers.Where(n =>
+        {
+            Console.WriteLine($"Filtering {n}");
+            return n > 2;
+        });
+
+        // BREAKPOINT #2
+        Console.WriteLine("Query defined");
+
+        // BREAKPOINT #3
+        foreach (var n in query)
+        {
+            Console.WriteLine($"Result: {n}");
+        }
+
+        //BREAKPOINT #4
+        Console.WriteLine("Done");
+    }
+}
+
+LINQ is streaming, not batch-processing.

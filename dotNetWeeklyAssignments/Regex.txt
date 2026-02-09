@@ -1,0 +1,3 @@
+Regex(Regular Expressions in C#):It is used for
+Validate input (email, phone, password),Search text,Extract data
+Replace parts of strings,Split strings
