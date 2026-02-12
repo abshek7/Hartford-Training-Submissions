@@ -1,0 +1,68 @@
+so give me a ideal folder directory for   aspnet core web api application with all files and folder and tell me why each are needed
+
+Method	Endpoint	Description	             Request Body	Response Body
+GET	/api/rooms	Get all hostel rooms	     None	        Array of room objects
+GET	/api/rooms/{id}	Get a specific room by ID	None	        Room object
+POST	/api/rooms	Add a new hostel room	     Room object	Created room object
+PUT	/api/rooms/{id}	Update an existing room	     Room object	None (204 No Content)
+DELETE	/api/rooms/{id}	Delete a room	None	     None               (204 No Content)
+
+
+component class
+using System.ComponentModel.DataAnnotations;
+
+Data Annotation -Model Design
+-- Required
+-- MinLength
+-- Range
+
+
+DTO:
+These are not entity models
+
+
+
+Services:
+Create interface and Classes
+common place to register
+
+
+program.cs
+dependency injection
+construction
+AddScoped
+
+
+AddTransient (new instance every time) 
+or AddSingleton (one instance for app lifetime), 
+AddScoped provides a balance for web applications.
+by default aspnet used DI
+
+
+Like inject:
+    private readonly IProductService _productService;
+        public ProductsController(IProductService productService)
+        {
+            _productService = productService;
+        }
+
+
+lifetime deciding
+service oriented registration
+services should definitely do dependency injection
+
+
+
+
+Service-interface register and peform crud
+
+Product Class-
+product
+dtos
+models
+service
+controller
+
+
+
+https://www.nuget.org/

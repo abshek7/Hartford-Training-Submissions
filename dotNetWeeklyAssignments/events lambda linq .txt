@@ -113,3 +113,5 @@ class Program
 }
 
 LINQ is streaming, not batch-processing.
+
+connection string references
