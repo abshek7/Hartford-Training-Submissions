@@ -1,6 +1,55 @@
 @ProductsStarter_HostAddress = http://localhost:5261
 
-GET {{ProductsStarter_HostAddress}}/weatherforecast/
+### Get all products
+GET {{ProductsStarter_HostAddress}}/api/Products
+Accept: application/json
+
+###
+
+### Get product by id
+GET {{ProductsStarter_HostAddress}}/api/Products/1
+Accept: application/json
+
+###
+
+### Create product
+POST {{ProductsStarter_HostAddress}}/api/Products
+Content-Type: application/json
+
+{
+  "name": "Tablet",
+  "price": 32000,
+  "category": "Electronics",
+  "cartQuantity": 15,
+  "description": "Android tablet with 10 inch display"
+}
+
+###
+
+### Update product
+PUT {{ProductsStarter_HostAddress}}/api/Products/1
+Content-Type: application/json
+
+{
+  "name": "Gaming Laptop",
+  "price": 95000,
+  "category": "Electronics",
+  "cartQuantity": 5,
+  "description": "High-end gaming laptop"
+}
+
+###
+
+### Update quantity only
+PATCH {{ProductsStarter_HostAddress}}/api/Products/1/quantity
+Content-Type: application/json
+
+10
+
+###
+
+### Delete product
+DELETE {{ProductsStarter_HostAddress}}/api/Products/1
 Accept: application/json
 
 ###
