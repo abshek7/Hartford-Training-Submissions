@@ -1,0 +1,76 @@
+Entity Framework:
+
+ORM -- Make database operations with ease
+
+https://www.entityframeworktutorial.net/
+
+Approaches:
+Have Db or not
+Code-First
+DB-First
+Before and After 6th version
+Prior .net 3.5 they used to ADO.NET code
+
+Connection String: Setup the connection for hashing and caching
+
+Uses Models and Generates Classes
+Use  Table and Generate POCO
+
+It provides automation for writing crud operations and generating pocos
+
+Mapping: Build Entity Data model
+
+Mostly code first approach :from code we get db
+
+Querying:
+EF API translates LINQ-to-Entities queries to SQL queries for relational databases using EDM and also converts results back to entity objects.
+
+Saving
+EF API infers INSERT, UPDATE, and DELETE commands based on the state of entities when the SaveChanges() method is called. The ChangeTracker keeps track of the states of each entity as and when an action is performed.
+
+
+DbSet--- represents reference to table
+
+
+Seeding,Migrations
+
+
+
+Package:Microsoftentityframeworkcore.tools
+EF Core: Code First...
+
+
+Migrations: code generating facility
+add-migration intial
+
+remove-migration:removes last migration
+new model ,change in model- changes -----do migrations
+
+add-migration --name
+update-database
+
+
+
+
+
+models
+context
+appsettings-connection string
+program.cs -register
+
+
+overriding onmodelcreating
+
+
+
+In manual closing and opening of files
+
+while using block
+
+automatic destruction
+
+example of adonet :connection opening and close
+
+no explicit close statement is required
+datareaders doesnot allow multiple opening
+Using statement automatically closes the opened resources
