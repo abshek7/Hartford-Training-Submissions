@@ -1,0 +1,54 @@
+@if (loading()) {
+  <p class="text-gray-500">Loading blogs...</p>
+}
+
+<div class="p-6 max-w-4xl mx-auto">
+
+  <div class="flex justify-between mb-4">
+    <h1 class="text-2xl font-bold">Blogs</h1>
+
+    <a routerLink="/create"
+       class="bg-black text-white px-4 py-2 rounded">
+       Create
+    </a>
+  </div>
+
+  @if (blogs().length) {
+
+    @for (blog of blogs(); track blog.id) {
+
+      <div class="border p-4 rounded mb-4 shadow bg-white">
+
+        <h2 class="text-xl font-semibold">{{ blog.title }}</h2>
+        <p>{{ blog.content }}</p>
+
+        <div class="mt-3 flex gap-2">
+
+          <a [routerLink]="['/details', blog.id]"
+             class="bg-black text-white px-3 py-1 rounded">
+             View
+          </a>
+
+          <a [routerLink]="['/edit', blog.id]"
+             class="bg-black text-white px-3 py-1 rounded">
+             Edit
+          </a>
+
+          <button (click)="delete(blog.id)"
+             class="bg-black text-white px-3 py-1 rounded">
+             Delete
+          </button>
+
+        </div>
+
+      </div>
+
+    }
+
+  } @else {
+
+    <p class="text-gray-500">No blogs available</p>
+
+  }
+
+</div>
