@@ -1,0 +1,65 @@
+<div class="flex justify-center items-center min-h-screen bg-pink-100 p-4">
+  <div class="bg-white border-4 border-black p-6 w-full max-w-sm shadow-[6px_6px_0px_black]">
+    <h2 class="text-2xl font-extrabold mb-4 text-center">Register</h2>
+
+    <!-- Name -->
+    <input
+      class="border-4 border-black p-2 w-full mb-3 font-semibold"
+      placeholder="Name"
+      [ngModel]="name()"
+      (ngModelChange)="name.set($event)"
+    />
+
+    <!-- Email -->
+    <input
+      class="border-4 border-black p-2 w-full mb-3 font-semibold"
+      placeholder="Email"
+      [ngModel]="email()"
+      (ngModelChange)="email.set($event)"
+    />
+
+    <!-- Password -->
+    <input
+      class="border-4 border-black p-2 w-full mb-3 font-semibold"
+      type="password"
+      placeholder="Password"
+      [ngModel]="password()"
+      (ngModelChange)="password.set($event)"
+    />
+
+    <!-- Role -->
+    <select
+      class="border-4 border-black p-2 w-full mb-4 font-semibold"
+      [ngModel]="role()"
+      (ngModelChange)="role.set($event)"
+    >
+      <option value="Reader">Reader</option>
+      <option value="Author">Author</option> 
+    </select>
+
+    <!-- Button -->
+    <button
+      class="bg-green-400 border-4 border-black px-4 py-2 w-full font-bold shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition"
+      (click)="register()"
+    >
+      Register
+    </button>
+
+    <!-- NEW USER LINK -->
+    <div class="mt-4 text-center">
+      <p class="font-semibold mb-2">Already Have an account?</p>
+
+      <a
+        routerLink="/login"
+        class="inline-block bg-pink-300 border-4 border-black px-4 py-2 font-bold shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition"
+      >
+        Log into your Account
+      </a>
+    </div>
+
+    <!-- Success -->
+    @if (success()) {
+      <p class="text-green-700 mt-3 text-center font-bold">Registered successfully</p>
+    }
+  </div>
+</div>
