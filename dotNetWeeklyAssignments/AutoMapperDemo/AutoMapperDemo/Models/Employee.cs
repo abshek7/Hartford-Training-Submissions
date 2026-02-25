@@ -1,0 +1,12 @@
+﻿namespace AutoMapperDemo.Models
+
+//public record Employee(string Name,int Salary,string Address ,string Department);
+{
+    public class Employee
+    {
+        public string Name { get; set; }
+        public int Salary { get; set; }
+        public string Address { get; set; }
+        public string Department { get; set; }
+    }
+}

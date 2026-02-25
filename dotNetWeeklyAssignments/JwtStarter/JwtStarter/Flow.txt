@@ -1,0 +1,33 @@
+﻿JWT authentication flow:
+User logs in (usually via a login endpoint)
+
+---Server generates a JWT token using:
+
+Secret Key
+
+Issuer
+
+Audience
+
+Expiration time
+
+Client stores token (browser / app)
+
+Client sends token in HTTP header:Authorization: Bearer <token>
+
+---ASP.NET middleware validates token using:
+
+Secret key
+
+Issuer
+
+Audience
+
+Expiry
+
+If valid → request allowed
+
+If invalid → 401 Unauthorized
+
+
+ 

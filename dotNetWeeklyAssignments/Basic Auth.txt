@@ -1,0 +1,38 @@
+Authentication and Authorization
+
+Create ASP.NET Core Web API
+Install Ef related packages
+Add Models Folder
+Add User Class
+properties(userId,FirstName,LastName,Email,pwd,bool isActive(default=true),DateTime CreatedON(DataTime))
+
+Create 2 DTos for this
+LoginDto:props(Email,password)
+UserDto:props(FirstName,,LastName,password)
+
+Connect with SQL SERVER:
+appsettings.json:"ConnectionStrings"
+
+
+Add DbContext Class
+
+
+register dbcontext into program.cs
+
+add-migration intial
+update-database
+
+=
+we have to use firstordefault
+
+
+savechanges
+
+
+
+User authentication:
+service:method in controller
+
+
+that will give token
+this token is sent to further requests

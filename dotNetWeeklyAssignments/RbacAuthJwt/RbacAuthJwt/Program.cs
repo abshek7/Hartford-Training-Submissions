@@ -1,9 +1,13 @@
 
+using Microsoft.EntityFrameworkCore;
+using RbacAuthJwt.Data;
+using RbacAuthJwt.Service;
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
-namespace JwtStarter
+
+namespace RbacAuthJwt
 {
     public class Program
     {
@@ -18,38 +22,28 @@ namespace JwtStarter
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            //from models
-            var jwtSettings = new Jwtsettings();
-            //from appsettings.json
-            builder.Configuration.GetSection("JwtSettings").Bind(jwtSettings);
-            // creating a single instance across application
-            builder.Services.AddSingleton(jwtSettings);
+            builder.Services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            builder.Services.AddAuthentication()
-            builder.Services.AddAuthentication(options => { options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options =>
+            builder.Services.AddScoped<JwtService>();
+
+            var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!);
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = true,
-
                         ValidateAudience = true,
-
                         ValidateLifetime = true,
-
                         ValidateIssuerSigningKey = true,
-
-                        ValidIssuer = jwtSettings.Issuer,
-
-                        ValidAudience = jwtSettings.Audience,
-
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
-
+                        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                        ValidAudience = builder.Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(key)
                     };
                 });
 
-
+            builder.Services.AddAuthorization();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -61,7 +55,6 @@ namespace JwtStarter
 
             app.UseHttpsRedirection();
 
-            app.UseAuthentication();
             app.UseAuthorization();
 
 

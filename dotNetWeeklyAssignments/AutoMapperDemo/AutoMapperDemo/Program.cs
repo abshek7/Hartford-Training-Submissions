@@ -1,8 +1,5 @@
 
-using BlogAPISQLServer.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace BlogAPISQLServer
+namespace AutoMapperDemo
 {
     public class Program
     {
@@ -16,21 +13,11 @@ namespace BlogAPISQLServer
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<BlogDbContext>(opt =>
-      opt.UseSqlServer(builder.Configuration.GetConnectionString("blogDB")));
+            builder.Services.AddAutoMapper(typeof(Program));
 
-            builder.Services.AddCors(options =>
-            {
-                options.AddPolicy("angular",
-                    policy => policy.AllowAnyOrigin()
-                                    .AllowAnyHeader()
-                                    .AllowAnyMethod());
-            });
+
 
             var app = builder.Build();
-       
-
-            app.UseCors("angular");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

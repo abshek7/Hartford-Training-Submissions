@@ -1,0 +1,63 @@
+c/cpp-structured/procedural
+
+modular-functions,globals,main()
+
+
+C#---Fully OOPS
+using Classes -Objects
+
+
+MVC:Model View Controller
+Layered Architecture
+UI
+Entity Layer
+Business Access Layer(BAL) or BO
+Data Access Layer(DAL) or DO
+
+OOPS --mainly abstraction
+
+Classes/Interfaces/Encapsulation/Polymorphism/Inheritance
+
+organizing the project:Architecting using Standardization
+Easy to develop by team
+Easy to test
+
+
+https://dotnettutorials.net/course/dot-net-design-patterns/
+
+https://refactoring.guru/design-patterns/csharp
+
+
+Design Pattern:decides how code is organized
+
+
+Repository vs Service Layer
+
+automapper for mapping between model entities and DTOs
+
+
+
+global things-
+
+Middleware ---can be used anywhere
+
+
+
+SOLID Principles:
+Single Responsibility
+Open-Closed
+Liskov Substitution
+Interface Segregation
+Dependency Inversion
+
+
+Controller-->Repository-->Service-->EF Core-->DB
+
+
+in controller in place of context:use repo pattern
+
+
+Product Category conversion for usage of repository pattern
+
+repository pattern
+
