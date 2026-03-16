@@ -1,0 +1,124 @@
+[
+  {
+    "ContainingType": "InsuranceManagementApi.Controllers.ClaimController",
+    "Method": "SubmitClaim",
+    "RelativePath": "api/claims",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "InsuranceManagementApi.DTOs.SubmitClaimRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceManagementApi.Controllers.ClaimController",
+    "Method": "UpdateClaimStatus",
+    "RelativePath": "api/claims/{claimId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "claimId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceManagementApi.Controllers.CustomerController",
+    "Method": "CreateCustomer",
+    "RelativePath": "api/customers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "InsuranceManagementApi.DTOs.CreateCustomerRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceManagementApi.Controllers.CustomerController",
+    "Method": "GetPoliciesByCustomer",
+    "RelativePath": "api/customers/{customerId}/policies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceManagementApi.Controllers.PolicyController",
+    "Method": "CreatePolicy",
+    "RelativePath": "api/policies",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "InsuranceManagementApi.DTOs.CreatePolicyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceManagementApi.Controllers.PolicyController",
+    "Method": "UpdatePolicy",
+    "RelativePath": "api/policies/{policyId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "premiumAmount",
+        "Type": "System.Decimal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceManagementApi.Controllers.PolicyController",
+    "Method": "GetPolicy",
+    "RelativePath": "api/policies/{policyId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

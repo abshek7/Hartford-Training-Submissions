@@ -1,0 +1,43 @@
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mini-divider {
+  margin: 12px 0 !important;
+}
+
+.plan-metrics {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(24, 144, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: 11px;
+  color: #8c8c8c;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-weight: 600;
+  color: #001529;
+}
+
+.form-card {
+  margin-top: 16px;
+}
+
+.form-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
